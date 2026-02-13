@@ -1,0 +1,81 @@
+---
+const events = [
+  {
+    title: "Jornadas de Cultura Libre",
+    description: "Un espacio donde conocer más acerca del sector de la inteligencia artificial en la ciencia abierta gracias al espacio dado por Ofilibre.",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=640",
+    link: "#",
+    delay: "200"
+  },
+  {
+    title: "Talleres sobre IA",
+    description: "Abolimos la brecha generacional a través de didácticos talleres que fomentan el aprendizaje para todas las edades.",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=640",
+    link: "#",
+    delay: "300"
+  },
+  {
+    title: "Hackathon de IA",
+    description: "¡Nuestro evento más interesante! Competición de desarrollo para dar soluciones a problemas reales, iterando en comunidad.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=640",
+    link: "#",
+    delay: "400"
+  }
+];
+---
+
+<section id="eventos" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    
+    <h2 class="text-3xl font-bold text-[#4D40AC] mb-4" data-aos="fade-up">
+      Próximos Eventos
+    </h2>
+    <div class="w-20 h-1 bg-[#221965] mx-auto mb-6"></div>
+    <p class="max-w-2xl mx-auto text-[#221965]" data-aos="fade-up" data-aos-delay="100">
+      Descubre los próximos talleres, charlas y eventos que hemos preparado para ti.
+    </p>
+    
+    <div class="flex flex-wrap justify-center gap-8 mt-16">
+      
+      {events.map((event) => (
+        <div 
+          class="bg-[#F4F5F0] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 w-full max-w-sm flex flex-col" 
+          data-aos="fade-up" 
+          data-aos-delay={event.delay}
+        >
+          <img 
+            src={event.image} 
+            alt={event.title} 
+            class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+          />
+          
+          <div class="p-6 text-left flex-grow flex flex-col">
+            <h3 class="text-xl font-bold mb-2 text-[#221965]">
+              {event.title}
+            </h3>
+            <p class="text-[#221965] mb-4 flex-grow">
+              {event.description}
+            </p>
+            
+            <a href={event.link} class="text-[#4D40AC] hover:text-[#221965] font-medium flex items-center mt-auto group">
+              Más información 
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      ))}
+
+    </div>
+
+    <div class="text-center mt-12" data-aos="fade-up">
+      <a 
+        href="/eventos" 
+        class="inline-flex items-center px-6 py-3 text-base font-medium rounded-md text-[#F4F5F0] bg-[#4D40AC] hover:bg-[#221965] shadow-md transition-colors duration-300 group"
+      >
+        Ver todos los eventos
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+
+  </div>
+</section>

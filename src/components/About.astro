@@ -1,0 +1,58 @@
+---
+const features = [
+  {
+    title: "Investigación",
+    description: "Promovemos proyectos de investigación en IA entre estudiantes y colaboramos con departamentos de la universidad.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>`
+  },
+  {
+    title: "Comunidad",
+    description: "Creamos un espacio donde los estudiantes pueden compartir conocimientos y experiencias sobre IA.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`
+  },
+  {
+    title: "Formación",
+    description: "Organizamos talleres, charlas y competiciones para mejorar las habilidades de nuestros miembros en IA.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>`
+  }
+];
+---
+
+<section id="sobre-nosotros" class="py-20 bg-[#F4F5F0]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#4D40AC] mb-4">
+        Sobre Nosotros
+      </h2>
+      <div class="h-1 w-24 bg-[#221965] mx-auto rounded-full mb-6"></div>
+      
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        La Asociación de Inteligencia Artificial (AIA) de la URJC nace con el objetivo de fomentar el aprendizaje y la investigación en IA entre los estudiantes.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {features.map((item, index) => (
+        <div 
+          class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center border border-gray-100"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div class="text-[#4D40AC] mb-6 p-3 bg-indigo-50 rounded-full">
+            <Fragment set:html={item.icon} />
+          </div>
+
+          <h3 class="text-xl font-bold text-[#221965] mb-4">
+            {item.title}
+          </h3>
+
+          <p class="text-gray-600 leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

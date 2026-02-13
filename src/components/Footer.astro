@@ -1,0 +1,51 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#4D40AC] text-[#F4F5F0] py-8">
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:flex md:items-center md:justify-between"
+  >
+    <div class="flex justify-center md:order-2 space-x-6 mb-4 md:mb-0">
+      <a
+        href="https://www.instagram.com/asociacion_ia/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-white transition-colors"
+      >
+        <i data-feather="instagram" class="h-5 w-5"></i>
+      </a>
+
+      <a
+        href="https://x.com/asociacion_ia?lang=es"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-white transition-colors"
+      >
+        <i data-feather="twitter" class="h-5 w-5"></i>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/company/asociaci%C3%B3n-de-inteligencia-artificial/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-white transition-colors"
+      >
+        <i data-feather="linkedin" class="h-5 w-5"></i>
+      </a>
+    </div>
+
+    <div class="md:order-1">
+      <p class="text-center text-sm md:text-left">
+        &copy; {currentYear} Asociación de Inteligencia Artificial (AIA) - URJC. Todos
+        los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Esto asegura que Feather Icons se ejecute al cargar la página en Astro
+  import feather from "feather-icons";
+  feather.replace();
+</script>
